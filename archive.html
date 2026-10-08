@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Daily IR Intelligence | Archive</title><style>
+body{
+  margin:0;background:#F4F7FB;
+  font-family:Arial,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  color:#18212F
+}
+.wrap{
+  max-width:760px;margin:0 auto;background:#FFF;
+  box-shadow:0 6px 28px rgba(16,42,67,.08)
+}
+.top{
+  padding:42px 48px 30px;
+  border-top:9px solid #0B2A4A;
+  border-bottom:1px solid #DDE5EE
+}
+.eyebrow{
+  font-size:12px;letter-spacing:2.2px;font-weight:700;
+  color:#2D6CDF;text-transform:uppercase;margin-bottom:10px
+}
+.title{
+  margin:0;font-size:34px;line-height:1.08;letter-spacing:-.7px;
+  color:#0B2A4A;font-weight:800
+}
+.date{margin-top:12px;font-size:13px;color:#66758A;letter-spacing:.3px}
+.scope{margin-top:19px;font-size:13px;color:#445268;line-height:1.55}
+.window{margin-top:8px;font-size:11px;color:#8390A1;line-height:1.5}
+
+.highlight{
+  margin:30px 48px 10px;padding:30px 32px;
+  background:#1557D5;color:#FFF
+}
+.highlight + .highlight{margin-top:14px}
+.highlight .tag{
+  font-size:11px;letter-spacing:1.9px;font-weight:700;opacity:.9;
+  margin-bottom:13px
+}
+.highlight h2{
+  margin:0 0 18px;font-size:26px;line-height:1.27;
+  letter-spacing:-.4px
+}
+.metric{
+  display:inline-block;font-size:32px;line-height:1;
+  font-weight:800;margin:2px 8px 2px 0
+}
+.highlight .small{font-size:13px;opacity:.92}
+.highlight .body{
+  margin-top:19px;padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.30)
+}
+.highlight .body strong{
+  display:block;font-size:12px;letter-spacing:.9px;margin-bottom:7px
+}
+.highlight .body p{
+  margin:0 0 14px;font-size:15px;line-height:1.68
+}
+.highlight a{
+  color:#FFF;font-size:13px;font-weight:700;text-decoration:none;
+  border-bottom:1px solid rgba(255,255,255,.65)
+}
+
+.section{padding:36px 48px 6px}
+.section-head{display:flex;align-items:flex-end;gap:15px}
+.section-no{
+  font-size:12px;letter-spacing:1.7px;color:#2D6CDF;font-weight:800
+}
+.section-title{
+  font-size:20px;color:#0B2A4A;font-weight:800;letter-spacing:-.25px
+}
+.rule{height:1px;background:#DDE5EE;margin:13px 0 0}
+
+.item{padding:25px 0 26px;border-bottom:1px solid #E7EDF4}
+.item:last-child{border-bottom:none}
+.item h3{
+  margin:0 0 17px;font-size:21px;line-height:1.4;
+  color:#18212F;font-weight:800;letter-spacing:-.3px
+}
+.num{color:#1557D5;font-weight:800}
+.label{
+  font-size:11px;letter-spacing:1.25px;text-transform:uppercase;
+  font-weight:800;color:#2D6CDF;margin-bottom:6px
+}
+.copy{
+  margin:0 0 15px;font-size:15px;line-height:1.75;color:#344257
+}
+.implication{
+  border-left:4px solid #9CC0FF;padding-left:15px;color:#26364C
+}
+.source{
+  margin-top:15px;font-size:12px;color:#7A8798;line-height:1.6
+}
+.source a{
+  color:#1557D5;font-weight:700;text-decoration:none;margin-left:7px
+}
+.empty{
+  padding:24px 0 26px;color:#758398;font-size:14px;line-height:1.7
+}
+.badge{
+  display:inline-block;margin-left:7px;padding:3px 7px;
+  border:1px solid #BFD1EA;background:#F3F7FD;color:#2D6CDF;
+  font-size:9px;letter-spacing:.8px;font-weight:800;vertical-align:2px
+}
+
+.takeaway{
+  margin:32px 48px 0;padding:24px 24px;
+  border-top:4px solid #1557D5;background:#F8FAFD
+}
+.takeaway-title{
+  font-size:11px;letter-spacing:1.4px;font-weight:800;color:#0B2A4A;
+  margin-bottom:12px
+}
+.takeaway p{
+  margin:0 0 10px;font-size:14px;line-height:1.75;color:#344257
+}
+.takeaway p:last-child{margin-bottom:0}
+
+.pool{
+  margin:22px 48px 0;padding:20px 22px;
+  background:#F5F8FC;border:1px solid #E0E8F1
+}
+.pool-title{
+  font-size:11px;letter-spacing:1.4px;font-weight:800;
+  color:#0B2A4A;margin-bottom:9px
+}
+.pool p{
+  margin:0;font-size:12px;line-height:1.8;color:#5B687A
+}
+
+.footer{
+  margin-top:32px;padding:24px 48px 32px;background:#0B2A4A;
+  color:#D9E6F5;font-size:11px;line-height:1.7
+}
+.footer strong{color:#FFF;letter-spacing:1px}
+
+@media (max-width:600px){
+  .top,.section,.footer{padding-left:24px;padding-right:24px}
+  .highlight,.pool,.takeaway{margin-left:24px;margin-right:24px}
+  .title{font-size:29px}
+  .highlight h2{font-size:23px}
+  .item h3{font-size:19px}
+  .copy{font-size:14px}
+}
+
+.issues{padding:26px 48px 10px}
+.issue{display:flex;border:1px solid #DDE5EE;margin-bottom:14px;text-decoration:none;color:inherit;background:#FFF}
+.issue:hover{border-color:#1557D5;box-shadow:0 4px 16px rgba(21,87,213,.12)}
+.issue-date{flex:0 0 112px;background:#0B2A4A;color:#FFF;padding:18px 0;text-align:center}
+.issue-no{font-size:11px;letter-spacing:1.4px;font-weight:800;color:#9CC0FF}
+.issue-day{font-size:30px;font-weight:800;line-height:1.1;margin-top:6px}
+.issue-month{font-size:12px;letter-spacing:1.6px;font-weight:700;margin-top:2px}
+.issue-weekday{font-size:10px;letter-spacing:1.4px;color:#D9E6F5;margin-top:6px}
+.issue-body{flex:1;padding:18px 22px;min-width:0}
+.issue-tag{font-size:10px;letter-spacing:1.4px;font-weight:800;color:#2D6CDF}
+.issue-headline{margin:7px 0 10px;font-size:17px;line-height:1.45;font-weight:800;color:#18212F;letter-spacing:-.2px}
+.issue-meta{font-size:11px;color:#7A8798;line-height:1.6}
+.issue-open{margin-top:10px;font-size:12px;font-weight:700;color:#1557D5}
+.issue.latest{border-color:#1557D5}
+.latest-badge{display:inline-block;margin-left:6px;padding:2px 6px;background:#1557D5;color:#FFF;font-size:9px;letter-spacing:.8px;font-weight:800;vertical-align:1px}
+@media (max-width:600px){
+  .issues{padding-left:24px;padding-right:24px}
+  .issue-date{flex-basis:84px}
+  .issue-day{font-size:24px}
+  .issue-headline{font-size:15px}
+}
+</style></head><body><div class="wrap"><div class="top"><div class="eyebrow">Executive IR Brief · Archive</div><h1 class="title">DAILY IR INTELLIGENCE</h1><div class="date">PAST ISSUES · 총 7호</div><div class="window">29 Sep 2026 – 08 Oct 2026</div></div><div class="issues"><a class="issue latest" href="archive/2026-10-08.html"><div class="issue-date"><div class="issue-no">NO. 007</div><div class="issue-day">08</div><div class="issue-month">OCT 2026</div><div class="issue-weekday">THU</div></div><div class="issue-body"><div class="issue-tag">TODAY'S HIGHLIGHT · CAPTIVE RISK<span class="latest-badge">LATEST</span></div><div class="issue-headline">Volkswagen Financial Services UK — 자동차금융 보상 충당금 £725mn</div><div class="issue-meta">하이라이트 2건 · 본문 기사 5건<br/>SEARCH WINDOW · 07 OCT 2026 07:00 – 08 OCT 2026 07:00 KST</div><div class="issue-open">이 호 보기 →</div></div></a><a class="issue" href="archive/2026-10-07.html"><div class="issue-date"><div class="issue-no">NO. 006</div><div class="issue-day">07</div><div class="issue-month">OCT 2026</div><div class="issue-weekday">WED</div></div><div class="issue-body"><div class="issue-tag">TODAY'S HIGHLIGHT · HMG EARNINGS</div><div class="issue-headline">현대차 3Q 실적 눈높이 하향 — 4Q 생산 정상화가 반등의 핵심</div><div class="issue-meta">하이라이트 2건 · 본문 기사 8건<br/>SEARCH WINDOW · 06 OCT 2026 08:00 – 07 OCT 2026 07:30 KST</div><div class="issue-open">이 호 보기 →</div></div></a><a class="issue" href="archive/2026-10-06.html"><div class="issue-date"><div class="issue-no">NO. 005</div><div class="issue-day">06</div><div class="issue-month">OCT 2026</div><div class="issue-weekday">TUE</div></div><div class="issue-body"><div class="issue-tag">TODAY'S HIGHLIGHT · CAPTIVE FUNDING</div><div class="issue-headline">Toyota Motor Credit, $2.25bn Floating-rate MTN</div><div class="issue-meta">하이라이트 3건 · 본문 기사 6건<br/>SEARCH WINDOW · 02 OCT 2026 08:00 – 06 OCT 2026 07:30 KST · WEEKEND / HOLIDAY CARRY-FORWARD</div><div class="issue-open">이 호 보기 →</div></div></a><a class="issue" href="archive/2026-10-02.html"><div class="issue-date"><div class="issue-no">NO. 004</div><div class="issue-day">02</div><div class="issue-month">OCT 2026</div><div class="issue-weekday">FRI</div></div><div class="issue-body"><div class="issue-tag">TODAY'S HIGHLIGHT · U.S. MARKET SHARE</div><div class="issue-headline">현대차그룹, 美 Q3 판매서 Ford 첫 추월 전망</div><div class="issue-meta">하이라이트 3건 · 본문 기사 6건<br/>SEARCH WINDOW · 01 OCT 2026 08:00 → 02 OCT 2026 07:30 KST</div><div class="issue-open">이 호 보기 →</div></div></a><a class="issue" href="archive/2026-10-01.html"><div class="issue-date"><div class="issue-no">NO. 003</div><div class="issue-day">01</div><div class="issue-month">OCT 2026</div><div class="issue-weekday">THU</div></div><div class="issue-body"><div class="issue-tag">TODAY'S HIGHLIGHT · PORTFOLIO RESTRUCTURING</div><div class="issue-headline">현대모비스, 램프사업 OPmobility에 6,000억원 매각</div><div class="issue-meta">하이라이트 2건 · 본문 기사 5건<br/>SEARCH WINDOW · 30 SEP 2026 08:00 → 01 OCT 2026 07:30 KST</div><div class="issue-open">이 호 보기 →</div></div></a><a class="issue" href="archive/2026-09-30.html"><div class="issue-date"><div class="issue-no">NO. 002</div><div class="issue-day">30</div><div class="issue-month">SEP 2026</div><div class="issue-weekday">WED</div></div><div class="issue-body"><div class="issue-tag">TODAY'S HIGHLIGHT · CAPTIVE FUNDING</div><div class="issue-headline">미국 장기금리 멀티데케이드 고점, Captive Funding 부담 확대</div><div class="issue-meta">하이라이트 3건 · 본문 기사 7건<br/>SEARCH WINDOW · 29 SEP 2026 08:00 → 30 SEP 2026 07:30 KST</div><div class="issue-open">이 호 보기 →</div></div></a><a class="issue" href="archive/2026-09-29.html"><div class="issue-date"><div class="issue-no">NO. 001</div><div class="issue-day">29</div><div class="issue-month">SEP 2026</div><div class="issue-weekday">TUE</div></div><div class="issue-body"><div class="issue-tag">TODAY'S HIGHLIGHT · CAPTIVE FUNDING</div><div class="issue-headline">Ford Credit, $1.579bn Auto ABS 2026-C 종결</div><div class="issue-meta">하이라이트 3건 · 본문 기사 8건<br/>SEARCH WINDOW · 28 SEP 2026 08:00 → 29 SEP 2026 07:30 KST</div><div class="issue-open">이 호 보기 →</div></div></a></div><div class="footer"><strong>DAILY IR INTELLIGENCE</strong><br/><a href="todaysnews.html" style="color:#FFF;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.65)">최신 호 보기 →</a></div></div></body></html>
