@@ -132,6 +132,10 @@ Do not depend on a user's computer being on if running a cloud Routine. Never as
 5. First run: there is no history log yet, so treat the current live `index.html` as the previous issue for duplicate checks.
 6. Notification: at the end of every run (success, skip, or failure), send a one-line result to the user's Claude mobile app
    (push notification if available in the session). Include: status, date, number of articles, live URL or the blocker.
+   After a successful publish (live page verified), the push notification AND the first lines of the final report must
+   give the share link in this exact form, ready to paste into the messenger:
+   `[Daily IR Intelligence] MM/DD 호 발행 — https://willu315.github.io/Daily-IR/todaysnews.html`
+   Send the share link only after the live check passes, never before.
 7. Repository layout (replaces "Live file: index.html" above):
    - `todaysnews.html` = latest issue. `index.html` only forwards to it (do not put content there).
    - `archive/YYYY-MM-DD.html` = every issue, including today's. Never overwrite another date's file.
