@@ -176,3 +176,6 @@ Do not depend on a user's computer being on if running a cloud Routine. Never as
 - Routine prompt (kept short; all rules live in this file): "Read CLAUDE.md in the repo root and run today's Daily IR
   Intelligence workflow end to end: holiday check, research, two-pass verification, build, publish to main, live check,
   then report the result."
+- 2026-10-08: cloud test routine "Daily IR Intelligence - TEST" (trig_01GeFruUKnvTAFGF5M3jXnue, disabled) succeeded with
+  the collector: 7 articles, ~7 min, ~27 searches + 12 fetches, live page + push verified (test/2026-10-08.html).
+  Live 10/08 issue updated with the Hyundai Capital hacking item the manual issue had missed.
