@@ -107,15 +107,22 @@ def main():
 
     seen, sections, failures = set(), {}, []
     for section, lang, query in QUERIES:
-        try:
-            for item in fetch(lang, query, start, end):
-                key = item["title"].lower()
-                if key not in seen:
-                    seen.add(key)
-                    sections.setdefault(section, []).append(item)
-        except Exception as exc:  # keep going; report failed queries at the end
-            failures.append(f"{lang} | {query} | {exc}")
-        time.sleep(0.5)
+        for attempt in range(3):  # Google News sometimes answers 503/429; back off and retry
+            try:
+                items = list(fetch(lang, query, start, end))
+                break
+            except Exception as exc:
+                error = exc
+                time.sleep(3 * (attempt + 1))
+        else:
+            failures.append(f"{lang} | {query} | {error}")
+            continue
+        for item in items:
+            key = item["title"].lower()
+            if key not in seen:
+                seen.add(key)
+                sections.setdefault(section, []).append(item)
+        time.sleep(1)
 
     print(f"# Candidates {start:%Y-%m-%d %H:%M} – {end:%Y-%m-%d %H:%M} KST ({len(seen)} articles)\n")
     print("Same story from several outlets is grouped into one line: earliest time, outlet count, up to 4 outlets.\n")
