@@ -142,6 +142,17 @@ Do not depend on a user's computer being on if running a cloud Routine. Never as
    - `archive.html` = list of all issues (newest first: date, first highlight headline, search window). Add the new
      issue to it on every publish.
    - Every issue's footer ends with a "지난 호 보기 →" link (`archive.html` from todaysnews, `../archive.html` inside archive/).
+9. Candidate collection is mandatory and comes first (it replaces open-ended searching as the main source):
+   - Run `python scripts/collect_news.py --start "<window start>" --end "<window end>"` (KST, e.g. "2026-10-09 07:00").
+     It pulls Google News RSS for every section, keeps only articles published inside the exact window, and groups the
+     same story across outlets (most widely reported first).
+   - Read the whole output. Every widely reported story (3+ outlets) about Hyundai Capital, Hyundai affiliates, captives,
+     or ratings must be either included or explicitly excluded with a reason in the run log.
+   - For each story you include, find the publisher's own article URL (WebSearch with the title, then WebFetch to confirm
+     title, time, and numbers). Google News links are not citable.
+   - Then run targeted WebSearch only for gaps (sections with no candidates, rating agencies, Reuters/Bloomberg/FT items).
+   - Never mark a run FAILED for "no news found" if the collector returned candidates; work through them. If the collector
+     itself fails (network error), fall back to WebSearch with at least 25 searches across all sections before giving up.
 8. Publish steps (in the repo root, on branch `main`; push directly to `main`, never to a `claude/` branch):
    1. Write `archive/YYYY-MM-DD.html` (footer link `../archive.html`).
    2. Copy it to `todaysnews.html`, changing the footer link to `archive.html`.
