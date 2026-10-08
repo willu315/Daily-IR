@@ -157,7 +157,7 @@ Do not depend on a user's computer being on if running a cloud Routine. Never as
   user's approval) before the first scheduled run.
 - 2026-10-08: test run approved by the user and published (commit 646059a). Repo reorganized into the layout in
   rule 7; `scripts/build_archive.py` in the repo rebuilds `archive.html` (run after adding a new archive file).
-- Next: set up the routine (first scheduled run: 2026-10-12 Mon; 10-09 is a holiday).
+- 2026-10-08: routine "Daily IR Intelligence" created (trig_01TWueoxfy4F3cWXwgr9qFYh, Sonnet, cron 0 22 * * 0-4 UTC = weekdays 07:00 KST). Test run correctly skipped (issue already live); mobile push works. First real run: 2026-10-12.
 - Routine prompt (kept short; all rules live in this file): "Read CLAUDE.md in the repo root and run today's Daily IR
   Intelligence workflow end to end: holiday check, research, two-pass verification, build, publish to main, live check,
   then report the result."
