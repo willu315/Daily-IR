@@ -142,6 +142,10 @@ Do not depend on a user's computer being on if running a cloud Routine. Never as
    - `archive.html` = list of all issues (newest first: date, first highlight headline, search window). Add the new
      issue to it on every publish.
    - Every issue's footer ends with a "지난 호 보기 →" link (`archive.html` from todaysnews, `../archive.html` inside archive/).
+10. No repetition of highlights: a story shown in a TODAY'S HIGHLIGHT block is not written out again in its section.
+   In the section, keep only its title line with the existing badge class:
+   `<div class="item"><h3>Company | headline<span class="badge">HIGHLIGHT 참조</span></h3></div>`
+   (no facts / IR message / implications / source there; they live in the highlight block).
 9. Candidate collection is mandatory and comes first (it replaces open-ended searching as the main source):
    - Run `python scripts/collect_news.py --start "<window start>" --end "<window end>"` (KST, e.g. "2026-10-09 07:00").
      It pulls Google News RSS for every section, keeps only articles published inside the exact window, and groups the
