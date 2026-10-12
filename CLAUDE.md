@@ -214,8 +214,18 @@ Run order: rule 1 (holiday) → 8 (collector) → research incl. 13 (funding) �
    - Usage budget (rule 3) applies. The collector covers issuer-first (grouped issuers) and market-first funding queries
      (sections `FUNDING-DOMESTIC` and `FUNDING-KP`); WebSearch is for gaps, for issuers with a collector hit, and for
      exact deal terms of candidates. Individual issuer searches only for 현대캐피탈 / 현대카드 / 현대커머셜.
-   - DART, SEIBro, 금투협 채권정보, KRX, Bloomberg/LSEG, IFR/GlobalCapital may be blocked or paywalled. Try them; if blocked,
-     record it in the log and mark terms from them as unverified. Never infer deal terms from search snippets alone.
+   - DART is not used (user decision 2026-10-12: no OpenDART key; the routine network blocks dart.fss.or.kr). Do not
+     spend searches on it; domestic deals come from the collector and news. SEIBro, 금투협 채권정보, KRX, Bloomberg/LSEG,
+     IFR/GlobalCapital may be blocked or paywalled: note it in the log and mark terms from them as unverified. Never infer
+     deal terms from search snippets alone.
+   - KP primary source — SEC EDGAR (added 2026-10-12): for SEC-registered Korean issuers, confirm KP terms from the filing
+     itself (424B2/424B5 final terms, FWP pricing term sheet, or 6-K). Check once per run, window dates only:
+     Korea Development Bank `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000869318&type=424B&count=10`,
+     Export-Import Bank of Korea (CIK 0000873463, same URL pattern), and EDGAR full-text search
+     (`https://efts.sec.gov/LATEST/search-index?q="<issuer name>"&forms=424B2,FWP&dateRange=custom&startdt=<start>&enddt=<end>`)
+     for other Korean issuers named in that day's KP news (e.g. Republic of Korea, KB/Shinhan/Woori Financial, KEPCO).
+     About 2–4 fetches; if sec.gov is unreachable, note it and continue. A filing is the preferred citation for terms;
+     the news article stays the source for orderbook / IPT colour.
    - Deal list: write every funding deal found in the window (included or not) to `logs/funding/YYYY-MM-DD.md` (table
      with the section 4 fields; unknown = "확인 필요"). Public repo: only public-source information, no internal data.
    - Report placement: sections 01–05 as the addendum says; KP deals in the KP block. Design option A approved (2026-10-12; sample
@@ -308,6 +318,7 @@ Funding 검수 결과'로 표시한다 (rule 13).
 - Live routine: "Daily IR Intelligence" (trig_01TWueoxfy4F3cWXwgr9qFYh, cron 0 22 * * 0-4 UTC = weekdays 07:00 KST). Model:
   Opus approved by the user 2026-10-12 after the sample comparison (Opus 3 highlights / 10 items, ~16 min, ~$7 API-equiv.
   vs Sonnet 2 / 3, ~6.5 min, ~$1.7); the user switches it on the routine page (agents cannot edit this routine).
+- Shared preview of the new layout: `samples/2026-10-12-sample.html` (Opus sample, KP block under the highlights).
   Prompt (kept short; all rules live in this file): "Read CLAUDE.md in the repo root and run today's Daily IR
   Intelligence workflow end to end: holiday check, research, two-pass verification, build, publish to main, live check,
   then report the result."
