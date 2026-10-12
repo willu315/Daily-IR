@@ -165,6 +165,98 @@ Do not depend on a user's computer being on if running a cloud Routine. Never as
    5. `git pull --rebase`, commit "Publish Daily IR Intelligence YYYY-MM-DD", `git push origin main`.
    6. Wait for GitHub Pages (1–3 min) and confirm https://willu315.github.io/Daily-IR/todaysnews.html shows the new date.
    On a skipped day (weekend/holiday) or a FAILED run, change nothing in the repo except an optional `logs/` entry.
+11. Funding Research Track (added 2026-10-12; full text in the addendum below). How it fits the rules above:
+   - Search window stays [previous Korean business day 07:00, today 07:00). The addendum's "08:00 start" is a typo
+     (confirmed by the user 2026-10-12); 07:00 everywhere.
+   - Publishing stays fully autonomous (section 6 above). "컨텐츠 검수본 제출" = the published issue + run log + push
+     notification after the funding-specific Pass 2 passes. The addendum's "no final report/HTML before user confirmation"
+     means: do not build the HTML until all search tracks and both verification passes are complete. No approval wait.
+   - Usage budget (rule 3) applies. The collector covers issuer-first (grouped issuers) and market-first funding queries
+     (sections `FUNDING-DOMESTIC` and `FUNDING-KP`); WebSearch is for gaps, for issuers with a collector hit, and for
+     exact deal terms of candidates. Individual issuer searches only for 현대캐피탈 / 현대카드 / 현대커머셜.
+   - DART, SEIBro, 금투협 채권정보, KRX, Bloomberg/LSEG, IFR/GlobalCapital may be blocked or paywalled. Try them; if blocked,
+     record it in the log and mark terms from them as unverified. Never infer deal terms from search snippets alone.
+   - Deal list: write every funding deal found in the window (included or not) to `logs/funding/YYYY-MM-DD.md` (table
+     with the section 4 fields; unknown = "확인 필요"). Public repo: only public-source information, no internal data.
+   - Report placement: sections 01–05 as the addendum says. The "KP MARKET WATCH" block and deal tables are NOT approved
+     yet (design decision pending; sample at `samples/kp-market-watch.html`). Until approved, use only the existing
+     classes: a material non-auto/non-finance KP deal may be a TODAY'S HIGHLIGHT; others stay in the funding log only.
+   - Show the funding check result in the run log under "Domestic Funding / KP Funding 검수 결과", and as one sentence
+     inside the SEARCH UNIVERSE paragraph (existing `.pool` block; no new element).
+
+---
+
+## Funding Research Addendum (written by the user, 2026-10-12)
+
+Rule 11 above resolves the conflicts (07:00 start, autonomous publishing, pending design). Otherwise follow as written.
+
+### 1. 실행시간
+- 실행: 한국 영업일 오전 07:00 (Asia/Seoul). 검색 종료 기준: 당일 07:00. 검색 시작: 직전 영업일 07:00 (rule 11).
+- 주말·공휴일 미실행, 다음 영업일에 이월 검색. 07:00 이후 게시 기사는 다음 실행에 반영.
+- 실행 시각과 보고서 발송 시각은 구분한다. 07:00에 검색을 시작하고 충분한 검색 및 2차 검수가 끝난 뒤 발행한다.
+
+### 2. 신규 필수 검색 트랙 — Domestic & Offshore Funding
+기존 자동차·Captive Finance 뉴스 검색과 독립적으로 Funding Research Track을 운영한다.
+
+TRACK A — 국내 여전사 개별 발행. 대상: 현대캐피탈, 현대카드, 현대커머셜 / 신한카드, 삼성카드, KB국민카드, 롯데카드,
+하나카드, 우리카드, BC카드 / KB캐피탈, 신한캐피탈, 하나캐피탈, 우리금융캐피탈, BNK캐피탈, JB우리캐피탈, NH농협캐피탈,
+롯데캐피탈, 메리츠캐피탈, 한국투자캐피탈, 산은캐피탈 등. 발행사 목록은 고정하지 않고 여전업 등록 현황과 신규 발행
+내역으로 갱신한다. 조달수단: 여전채·일반 회사채, 공모·사모 채권, ABS·ABCP·ABL, CP·전자단기사채, 신종자본증권·후순위채,
+ESG·녹색·사회적채권, 외화채권 및 해외 유동화.
+
+TRACK B — KP물(Korean Paper): 한국계 발행사의 해외 외화채권. 대상: 국내 카드·캐피탈사, 은행·금융지주,
+정책금융기관, 자동차 및 주요 대기업, 공기업·공공기관, 한국계 해외법인 및 보증부 발행. 수단: USD/EUR/JPY 등 외화채,
+글로벌본드·유로본드, Reg S/144A, MTN·EMTN, 해외 ABS·구조화채권, 지속가능·ESG 채권. 국내 원화채와 구분하며, 해외법인
+발행·보증 구조는 실제 발행주체와 최종 신용위험 부담자를 구분한다.
+
+### 3. 발행 이벤트 검색 방법 (세 가지 병행)
+A. Issuer-first — 국내: 회사채 발행, 여전채 발행, 수요예측, 발행금리, 민평금리, 가산금리, 증액 발행, ABS 발행,
+단기사채 발행, 조달 다변화. 해외: bond issuance, priced bonds, bond offering, initial price thoughts, final price
+guidance, new issue concession, orderbook, oversubscribed, spread over Treasuries, spread over mid-swaps, offshore
+funding, dollar bond, Korean paper.
+B. Market-first — 회사명 없이: 여전채 신규 발행, 카드채 발행금리, 캐피탈채 수요예측, 여전사 ABS 발행, Korean issuers
+dollar bonds, Korean financial institutions bond issuance, Korean paper new issue, South Korea offshore bond pricing.
+목록에 없는 신규 발행사도 발견한다.
+C. Source-first — 국내: DART, SEIBro, 금융투자협회 채권정보, 한국거래소 채권정보, 한국신용평가·한국기업평가·
+NICE신용평가, 연합인포맥스·더벨·딜사이트, 한국경제·매일경제. 해외: Bloomberg/LSEG 등 접근 가능한 발행 데이터,
+Reuters, IFR/GlobalCapital, S&P/Moody's/Fitch, 발행사 IR, Offering Circular/Pricing Supplement, 해외 거래소 상장 공시.
+유료 데이터에 접근할 수 없으면 검증되지 않았음을 명시하고, 검색 결과만으로 거래조건을 추정하지 않는다.
+
+### 4. 발행 건별 수집 항목
+Issuer(실제 발행사·모회사) · Instrument · Market(국내/KP) · Currency · Issue Size · Tenor(만기·발행일) ·
+Coupon/Yield(표면금리·발행수익률) · Spread(국고채·민평·UST·MS 등 대비) · Rating(발행사·채권) · Demand(수요예측
+참여액·주문) · Status(계획·수요예측·가격확정·발행완료) · Source(정확한 개별 원문 URL).
+발행금리·발행수익률·스프레드를 혼동하지 않는다. 국내채는 민평 대비 bp, KP물은 UST 또는 Mid-Swap 대비 spread와 통화를
+가능한 범위에서 기록한다. 스왑 후 원화 조달비용은 실제 헤지 조건이 확인되지 않으면 추정치로 명시한다.
+
+### 5. IR Materiality 우선 검토
+동종 여전사 대비 낮거나 높은 조달금리 · 대규모 발행 또는 이례적 만기구조 · 해외 조달시장 신규 진입 · ABS를 통한
+조달 다변화 · 신용등급·전망 변경과 연계된 발행 · 높은 수요예측 경쟁률 또는 주문 부진 · 발행 취소·연기·가격 재조정 ·
+장단기 조달구조 변화 · 조달금리 추세 · 한국계 발행사의 글로벌 투자자 수요 변화.
+일반적인 소액·반복 발행을 모두 Highlight에 넣지 않는다. 본문에서 제외한 발행 건도 발행 거래 목록(rule 11)에 기록한다.
+
+### 6. Peer Funding Comparison (조건이 충분히 확보된 경우)
+현대캐피탈 vs 국내 AA급 여전사 · 카드사 vs 캐피탈사 · 동일 등급·유사 만기 발행금리 · 동일 통화·유사 만기 KP 스프레드 ·
+직전 발행 대비 변화 · 국내 vs 해외 조달. 발행일, 만기, 통화, 선후순위, 담보·보증구조, 등급 차이를 반영하고, 비교
+가능성이 부족한 거래의 단순 금리 차이를 현대캐피탈 조달 경쟁력으로 해석하지 않는다.
+
+### 7. 보고서 반영
+기존 섹션 구조 유지: 현대캐피탈 → 01 · 현대차그룹 계열사 → 02 · 국내 카드·캐피탈사 → 03 · 글로벌 Captive → 04 ·
+자동차 제조사 → 05. 은행·공기업·일반 대기업 KP물은 중요도에 따라 TODAY'S HIGHLIGHT 또는 'KP MARKET WATCH'(디자인
+승인 전에는 rule 11). 발행 이벤트가 다수인 날은 표로 요약(승인 전에는 rule 11)하고 중요한 거래만 IR MESSAGE를 쓴다.
+
+### 8. Funding 전용 2차 자체검수 (기존 Pass 2와 별도)
+1. 국내 여전사 발행사별 검색 완료? 2. 시장 전체 검색 수행? 3. KP 신규 발행을 통화별·발행사별로 확인? 4. 수요예측과
+실제 발행을 혼동하지 않았나? 5. 복수 매체 보도 중복 제거? 6. 증액·리오프닝·신규 발행 구분? 7. 발행액·금리·스프레드·
+만기·등급을 원문으로 확인? 8. 검색기간 내 신규 이벤트인가? 9. 개별 거래의 공시·원문 링크 확인? 10. 중요한 조달
+이벤트가 Highlight에서 누락되지 않았나?
+원문 검증이 어려운 발행 건은 '확인 필요'로 남기고 거래조건을 임의로 쓰지 않는다. 결과는 'Domestic Funding / KP
+Funding 검수 결과'로 표시한다 (rule 11).
+
+### 9. 실행 완료 기준
+다음을 모두 끝낸 뒤에만 HTML을 만들고 발행한다: 07:00 기준 검색기간 적용 · 해외·국내 자동차 및 Captive 검색 · 국내
+여전사 발행사별 검색 · KP 시장 전체 및 발행사별 검색 · 국내외 신평사 및 공시 검증 · 원문 링크·수치·날짜 검증 · 독립적인
+2차 자체검수.
 
 ---
 
@@ -183,3 +275,5 @@ Do not depend on a user's computer being on if running a cloud Routine. Never as
 - 2026-10-08: cloud test routine "Daily IR Intelligence - TEST" (trig_01GeFruUKnvTAFGF5M3jXnue, disabled) succeeded with
   the collector: 7 articles, ~7 min, ~27 searches + 12 fetches, live page + push verified (test/2026-10-08.html).
   Live 10/08 issue updated with the Hyundai Capital hacking item the manual issue had missed.
+- 2026-10-12: Funding Research Addendum + rule 11 added (user confirmed: 07:00 window start, autonomous publishing kept,
+  funding deal list in public `logs/funding/`). KP MARKET WATCH / table design pending the user's review of the sample.

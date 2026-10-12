@@ -49,6 +49,19 @@ QUERIES = [
     ("05 GLOBAL AUTOMOTIVE PEERS", "en", "Tesla OR BYD"),
     ("05 GLOBAL AUTOMOTIVE PEERS", "en", "automakers tariffs OR EU China car"),
     ("RATINGS", "en", "Moody's OR \"S&P Global Ratings\" OR Fitch automaker OR \"auto finance\" rating"),
+    # Funding Research Track (CLAUDE.md rule 11): issuer-first (grouped) and market-first
+    ("FUNDING-DOMESTIC", "ko", "현대캐피탈 OR 현대카드 OR 현대커머셜 채권 OR 회사채 OR ABS OR 수요예측 OR 발행"),
+    ("FUNDING-DOMESTIC", "ko", "신한카드 OR 삼성카드 OR KB국민카드 OR 롯데카드 OR 하나카드 OR 우리카드 OR BC카드 채권 OR 회사채 OR ABS OR 신종자본증권"),
+    ("FUNDING-DOMESTIC", "ko", "KB캐피탈 OR 신한캐피탈 OR 하나캐피탈 OR 우리금융캐피탈 OR BNK캐피탈 OR JB우리캐피탈 회사채 OR 채권 OR ABS"),
+    ("FUNDING-DOMESTIC", "ko", "NH농협캐피탈 OR 롯데캐피탈 OR 메리츠캐피탈 OR 한국투자캐피탈 OR 산은캐피탈 회사채 OR 채권 OR ABS"),
+    ("FUNDING-DOMESTIC", "ko", "여전채 발행 OR 카드채 발행금리 OR 캐피탈채 수요예측 OR 여전사 ABS"),
+    ("FUNDING-DOMESTIC", "ko", "여전채 민평 OR 여전채 가산금리 OR 여전채 금리 OR 카드채 금리"),
+    ("FUNDING-DOMESTIC", "ko", "카드 OR 캐피탈 단기사채 OR 전자단기사채 OR ABCP OR 후순위채"),
+    ("FUNDING-KP", "ko", "KP물 OR 한국물 OR 외화채 발행 OR 달러채 발행"),
+    ("FUNDING-KP", "ko", "글로벌본드 OR 유로본드 OR 포모사본드 OR 김치본드 OR 사무라이본드 발행"),
+    ("FUNDING-KP", "en", '"Korean paper" OR "Korean issuers" OR "South Korea" dollar bond'),
+    ("FUNDING-KP", "en", "Korea priced bonds OR \"bond offering\" OR orderbook Treasuries OR mid-swaps"),
+    ("FUNDING-KP", "en", '"Hyundai Capital" OR "Hyundai Card" OR "Shinhan Card" OR "KB Kookmin Card" bond OR notes OR ABS'),
 ]
 
 
