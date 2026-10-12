@@ -305,7 +305,9 @@ Funding 검수 결과'로 표시한다 (rule 13).
 
 ## Status
 
-- Live routine: "Daily IR Intelligence" (trig_01TWueoxfy4F3cWXwgr9qFYh, Sonnet, cron 0 22 * * 0-4 UTC = weekdays 07:00 KST).
+- Live routine: "Daily IR Intelligence" (trig_01TWueoxfy4F3cWXwgr9qFYh, cron 0 22 * * 0-4 UTC = weekdays 07:00 KST). Model:
+  Opus approved by the user 2026-10-12 after the sample comparison (Opus 3 highlights / 10 items, ~16 min, ~$7 API-equiv.
+  vs Sonnet 2 / 3, ~6.5 min, ~$1.7); the user switches it on the routine page (agents cannot edit this routine).
   Prompt (kept short; all rules live in this file): "Read CLAUDE.md in the repo root and run today's Daily IR
   Intelligence workflow end to end: holiday check, research, two-pass verification, build, publish to main, live check,
   then report the result."
