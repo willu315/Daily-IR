@@ -1,4 +1,4 @@
-"""Compare a draft issue with past issues before publishing (CLAUDE.md rule 14).
+"""Score an issue against past issues — manual evaluation tool, NOT part of the daily run (usage).
 
 Usage (repo root):
     python scripts/quality_check.py <draft.html>
@@ -91,7 +91,7 @@ def main():
         elif draft[key] < target * THRESHOLD:
             flags.append(f"{label}: draft {draft[key]} vs benchmark {target}")
     if flags:
-        print("BELOW BENCHMARK (rule 14: one extra targeted research round, then re-check):")
+        print("BELOW BENCHMARK:")
         print("\n".join(f"- {f}" for f in flags))
         return 1
     print("OK: draft is at or near the benchmark on all counted metrics.")

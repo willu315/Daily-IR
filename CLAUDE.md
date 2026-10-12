@@ -115,8 +115,8 @@ Do not depend on a user's computer being on if running a cloud Routine. Never as
 
 ## Operating Rules (agreed with the user — these override the instructions above where they differ)
 
-Run order: rule 1 (holiday) → 8 (collector) → research incl. 13 (funding) → 9 (coverage check) → Pass 2 → 11 (writing,
-draft) → 14 (quality benchmark vs past issues) → 4 (label) → 12 (publish) → 6 (notify).
+Run order: rule 1 (holiday) → 8 (collector) → research incl. 13 (funding) → 9 (coverage check) → Pass 2 → 4 (label)
+→ 11 (writing) → 12 (publish) → 6 (notify).
 
 1. Holidays: use `korean_holidays.json` as the primary calendar. Dates listed under `_verify` must be checked against
    an official source on that day. If the year is missing from the file, fall back to an official online calendar and
@@ -201,8 +201,7 @@ draft) → 14 (quality benchmark vs past issues) → 4 (label) → 12 (publish) 
    2. Copy it to `todaysnews.html`, changing the footer link to `archive.html`.
    3. Run `python scripts/build_archive.py` to refresh `archive.html`.
    4. Write the run log to `logs/YYYY-MM-DD.md` (short: window, searches/fetches count, included/excluded with reasons,
-      rule 9 coverage notes, rule 14 scorecard, link checks, verification label and why) and the funding deal list
-      (rule 13).
+      rule 9 coverage notes, link checks, verification label and why) and the funding deal list (rule 13).
    5. `git pull --rebase`, commit "Publish Daily IR Intelligence YYYY-MM-DD", `git push origin main`.
    6. Wait for GitHub Pages (1–3 min) and confirm https://willu315.github.io/Daily-IR/todaysnews.html shows the new date.
    On a skipped day (weekend/holiday) or a FAILED run, change nothing in the repo except an optional `logs/` entry.
@@ -228,19 +227,6 @@ draft) → 14 (quality benchmark vs past issues) → 4 (label) → 12 (publish) 
      `<style>` verbatim. Every table row needs a verified source link; unverified terms read "확인 필요".
    - Show the funding check result in the run log under "Domestic Funding / KP Funding 검수 결과", and as one sentence
      inside the SEARCH UNIVERSE paragraph (existing `.pool` block; no new element).
-14. Pre-publish quality benchmark (added 2026-10-12, user request). After Pass 2 and before publishing:
-   - Write the draft to a temporary file and run `python scripts/quality_check.py <draft.html>`. It scores the draft
-     against the last 5 archive issues and the benchmark issues (the user's manual issues 2026-09-29 – 10-02):
-     highlights, body items, sections with items / empty, source links, outlets, numbers per story.
-   - Also compare the draft by reading the previous issue and one benchmark issue, and write 3–5 lines in the log on:
-     finance relevance of the highlights, headline specificity (numbers), 시사점 specificity, source mix
-     (overseas/domestic, primary documents), and anything the previous issue covered that has a follow-up today.
-   - If the script prints BELOW BENCHMARK: do ONE extra targeted research round (at least 8 more WebSearches aimed at
-     the flagged or weakest sections and at large collector clusters not yet reviewed), add only items that pass every
-     verification rule, then re-run the script. Only one round; then publish anyway with the scorecard and the reason
-     for the shortfall (e.g. holiday window, quiet news day) in the log. Never pad or loosen verification to pass it.
-   - Put the final scorecard table in the run log. The push notification adds "품질: 기준 충족" or
-     "품질: 기준 미달(<short reason>)".
 
 ---
 
@@ -330,5 +316,5 @@ Funding 검수 결과'로 표시한다 (rule 13).
 - 2026-10-12: Funding Research Addendum + rule 13 (07:00 window start, autonomous publishing kept, funding deal list in
   public `logs/funding/`, KP MARKET WATCH design A). Rules cleaned up and quality rules added: 3 (effort floor, priority),
   4 (strict verification label), 5 (duplicate check), 8 (timestamps, exclusion reasons), 9 (coverage targets),
-  11 (writing conventions), 14 (pre-publish quality benchmark, `scripts/quality_check.py`). The live 10/12 issue scores
-  below the benchmark (1 highlight / 3 full items vs 2.8 / 6.5).
+  11 (writing conventions). Daily runs do NOT read or score past issues (usage); `scripts/quality_check.py` is a manual
+  evaluation tool only (the live 10/12 issue scored 1 highlight / 3 full items vs 2.8 / 6.5 for the manual issues).
