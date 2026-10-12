@@ -21,8 +21,8 @@ publish it as `todaysnews.html` to the GitHub Pages repo, so the user only share
 
 - Reference file: the newest `archive/YYYY-MM-DD.html` in the repo (same CSS as `todaysnews.html`). Copy its `<head>` verbatim.
 - Keep its CSS, layout, colors, fonts, spacing, and class names exactly. Only the content changes each day.
-- Structure: top (eyebrow / title / date / scope / search window) → TODAY'S HIGHLIGHT blocks → numbered sections
-  01–05 (`.item` per news, or `.empty` when nothing new) → 06 KP MARKET WATCH (rule 13) → TODAY'S IR TAKEAWAY →
+- Structure: top (eyebrow / title / date / scope / search window) → TODAY'S HIGHLIGHT blocks → KP MARKET WATCH
+  (rule 13) → numbered sections 01–05 (`.item` per news, or `.empty` when nothing new) → TODAY'S IR TAKEAWAY →
   SEARCH UNIVERSE → footer.
 - Only approved addition: the `.deal-table` CSS (rule 13).
 
@@ -218,9 +218,9 @@ Run order: rule 1 (holiday) → 8 (collector) → research incl. 13 (funding) �
      record it in the log and mark terms from them as unverified. Never infer deal terms from search snippets alone.
    - Deal list: write every funding deal found in the window (included or not) to `logs/funding/YYYY-MM-DD.md` (table
      with the section 4 fields; unknown = "확인 필요"). Public repo: only public-source information, no internal data.
-   - Report placement: sections 01–05 as the addendum says. Design option A approved (2026-10-12; sample
-     `samples/kp-market-watch.html`): section `06 KP MARKET WATCH` (normal `.section` markup) goes after 05 and before
-     TODAY'S IR TAKEAWAY. It holds a deal table (ISSUER / INSTRUMENT / SIZE · TENOR / PRICING / DEMAND · STATUS / SOURCE)
+   - Report placement: sections 01–05 as the addendum says; KP deals in the KP block. Design option A approved (2026-10-12; sample
+     `samples/kp-market-watch.html`): a `KP MARKET WATCH` block (normal `.section` markup, `.section-no` text "KP") goes
+     directly under the TODAY'S HIGHLIGHT blocks, before 01 (user decision 2026-10-12). It holds a deal table (ISSUER / INSTRUMENT / SIZE · TENOR / PRICING / DEMAND · STATUS / SOURCE)
      plus a full `.item` only for material deals. With no in-window KP deal, use `.empty`. Sections 01–03 may use the
      same table when a section has 3+ funding deals. The table CSS is the only addition to the fixed design: if the
      newest archive `<head>` lacks `.deal-table`, append the `.deal-table-wrap` / `.deal-table` rules from the sample's
@@ -286,7 +286,7 @@ Coupon/Yield(표면금리·발행수익률) · Spread(국고채·민평·UST·MS
 
 ### 7. 보고서 반영
 기존 섹션 구조 유지: 현대캐피탈 → 01 · 현대차그룹 계열사 → 02 · 국내 카드·캐피탈사 → 03 · 글로벌 Captive → 04 ·
-자동차 제조사 → 05. 은행·공기업·일반 대기업 KP물은 중요도에 따라 TODAY'S HIGHLIGHT 또는 '06 KP MARKET WATCH'(rule 13). 발행 이벤트가 다수인 날은 표로 요약(rule 13)하고 중요한 거래만 IR MESSAGE를 쓴다.
+자동차 제조사 → 05. 은행·공기업·일반 대기업 KP물은 중요도에 따라 TODAY'S HIGHLIGHT 또는 'KP MARKET WATCH'(하이라이트 바로 아래, rule 13). 발행 이벤트가 다수인 날은 표로 요약(rule 13)하고 중요한 거래만 IR MESSAGE를 쓴다.
 
 ### 8. Funding 전용 2차 자체검수 (기존 Pass 2와 별도)
 1. 국내 여전사 발행사별 검색 완료? 2. 시장 전체 검색 수행? 3. KP 신규 발행을 통화별·발행사별로 확인? 4. 수요예측과
