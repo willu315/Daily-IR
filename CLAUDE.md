@@ -178,9 +178,13 @@ Do not depend on a user's computer being on if running a cloud Routine. Never as
      record it in the log and mark terms from them as unverified. Never infer deal terms from search snippets alone.
    - Deal list: write every funding deal found in the window (included or not) to `logs/funding/YYYY-MM-DD.md` (table
      with the section 4 fields; unknown = "확인 필요"). Public repo: only public-source information, no internal data.
-   - Report placement: sections 01–05 as the addendum says. The "KP MARKET WATCH" block and deal tables are NOT approved
-     yet (design decision pending; sample at `samples/kp-market-watch.html`). Until approved, use only the existing
-     classes: a material non-auto/non-finance KP deal may be a TODAY'S HIGHLIGHT; others stay in the funding log only.
+   - Report placement: sections 01–05 as the addendum says. Design option A approved (2026-10-12; sample
+     `samples/kp-market-watch.html`): section `06 KP MARKET WATCH` (normal `.section` markup) goes after 05 and before
+     TODAY'S IR TAKEAWAY. It holds a deal table (ISSUER / INSTRUMENT / SIZE · TENOR / PRICING / DEMAND · STATUS / SOURCE)
+     plus a full `.item` only for material deals. With no in-window KP deal, use `.empty`. Sections 01–03 may use the
+     same table when a section has 3+ funding deals. The table CSS is the only addition to the fixed design: if the
+     newest archive `<head>` lacks `.deal-table`, append the `.deal-table-wrap` / `.deal-table` rules from the sample's
+     `<style>` verbatim. Every table row needs a verified source link; unverified terms read "확인 필요".
    - Show the funding check result in the run log under "Domestic Funding / KP Funding 검수 결과", and as one sentence
      inside the SEARCH UNIVERSE paragraph (existing `.pool` block; no new element).
 
@@ -276,4 +280,4 @@ Funding 검수 결과'로 표시한다 (rule 11).
   the collector: 7 articles, ~7 min, ~27 searches + 12 fetches, live page + push verified (test/2026-10-08.html).
   Live 10/08 issue updated with the Hyundai Capital hacking item the manual issue had missed.
 - 2026-10-12: Funding Research Addendum + rule 11 added (user confirmed: 07:00 window start, autonomous publishing kept,
-  funding deal list in public `logs/funding/`). KP MARKET WATCH / table design pending the user's review of the sample.
+  funding deal list in public `logs/funding/`). KP MARKET WATCH design option A (table + material items) approved the same day.
