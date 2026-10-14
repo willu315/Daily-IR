@@ -223,9 +223,15 @@ Run order: rule 1 (holiday) → 8 (collector) → research incl. 13 (funding) �
      Korea Development Bank `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000869318&type=424B&count=10`,
      Export-Import Bank of Korea (CIK 0000873463, same URL pattern), and EDGAR full-text search
      (`https://efts.sec.gov/LATEST/search-index?q="<issuer name>"&forms=424B2,FWP&dateRange=custom&startdt=<start>&enddt=<end>`)
-     for other Korean issuers named in that day's KP news (e.g. Republic of Korea, KB/Shinhan/Woori Financial, KEPCO).
+     for other in-scope Korean financial issuers named in that day's KP news (e.g. KB/Shinhan/Woori Financial, Hana Bank).
      About 2–4 fetches; if sec.gov is unreachable, note it and continue. A filing is the preferred citation for terms;
      the news article stays the source for orderbook / IPT colour.
+   - KP scope (user decision 2026-10-14): KP = foreign-currency bonds of Korean FINANCIAL-sector issuers only —
+     여신전문금융회사 (카드·캐피탈·할부금융, incl. their overseas subsidiaries such as Hyundai Capital America), 은행·
+     금융지주, 정책금융기관 (산업은행·수출입은행·기업은행·주택금융공사 등), 증권·보험. Exclude non-financial issuers
+     (공기업·공공기관 such as 한국전력, 일반 대기업, 자동차 제조사, 정부): not in the KP block, KP highlights, KP table
+     or takeaway. A non-financial deal may appear elsewhere only on its own merit (e.g. a Hyundai affiliate in 02).
+     Log excluded non-financial KP deals in the deal list as "범위 외 (비금융)".
    - Deal list: write every funding deal found in the window (included or not) to `logs/funding/YYYY-MM-DD.md` (table
      with the section 4 fields; unknown = "확인 필요"). Public repo: only public-source information, no internal data.
    - Report placement: sections 01–05 as the addendum says; KP deals in the KP block. Design option A approved (2026-10-12; sample
@@ -258,7 +264,7 @@ TRACK A — 국내 여전사 개별 발행. 대상: 현대캐피탈, 현대카�
 내역으로 갱신한다. 조달수단: 여전채·일반 회사채, 공모·사모 채권, ABS·ABCP·ABL, CP·전자단기사채, 신종자본증권·후순위채,
 ESG·녹색·사회적채권, 외화채권 및 해외 유동화.
 
-TRACK B — KP물(Korean Paper): 한국계 발행사의 해외 외화채권. 대상: 국내 카드·캐피탈사, 은행·금융지주,
+TRACK B — KP물(Korean Paper) `[→ rule 13: 금융업권 발행사로 한정]`: 한국계 발행사의 해외 외화채권. 대상: 국내 카드·캐피탈사, 은행·금융지주,
 정책금융기관, 자동차 및 주요 대기업, 공기업·공공기관, 한국계 해외법인 및 보증부 발행. 수단: USD/EUR/JPY 등 외화채,
 글로벌본드·유로본드, Reg S/144A, MTN·EMTN, 해외 ABS·구조화채권, 지속가능·ESG 채권. 국내 원화채와 구분하며, 해외법인
 발행·보증 구조는 실제 발행주체와 최종 신용위험 부담자를 구분한다.
@@ -296,7 +302,7 @@ Coupon/Yield(표면금리·발행수익률) · Spread(국고채·민평·UST·MS
 
 ### 7. 보고서 반영
 기존 섹션 구조 유지: 현대캐피탈 → 01 · 현대차그룹 계열사 → 02 · 국내 카드·캐피탈사 → 03 · 글로벌 Captive → 04 ·
-자동차 제조사 → 05. 은행·공기업·일반 대기업 KP물은 중요도에 따라 TODAY'S HIGHLIGHT 또는 'KP MARKET WATCH'(하이라이트 바로 아래, rule 13). 발행 이벤트가 다수인 날은 표로 요약(rule 13)하고 중요한 거래만 IR MESSAGE를 쓴다.
+자동차 제조사 → 05. 은행 등 금융업권 KP물 `[→ rule 13: 공기업·일반 대기업 KP는 제외]`은 중요도에 따라 TODAY'S HIGHLIGHT 또는 'KP MARKET WATCH'(하이라이트 바로 아래, rule 13). 발행 이벤트가 다수인 날은 표로 요약(rule 13)하고 중요한 거래만 IR MESSAGE를 쓴다.
 
 ### 8. Funding 전용 2차 자체검수 (기존 Pass 2와 별도)
 1. 국내 여전사 발행사별 검색 완료? 2. 시장 전체 검색 수행? 3. KP 신규 발행을 통화별·발행사별로 확인? 4. 수요예측과
