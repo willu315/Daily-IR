@@ -228,7 +228,8 @@ Run order: rule 1 (holiday) → 8 (collector) → research incl. 13 (funding) �
      the news article stays the source for orderbook / IPT colour.
    - KP scope (user decision 2026-10-14): KP = foreign-currency bonds of Korean FINANCIAL-sector issuers only —
      여신전문금융회사 (카드·캐피탈·할부금융, incl. their overseas subsidiaries such as Hyundai Capital America), 은행·
-     금융지주, 정책금융기관 (산업은행·수출입은행·기업은행·주택금융공사 등), 증권·보험. Exclude non-financial issuers
+     금융지주, 정책금융기관 (산업은행·수출입은행·기업은행·주택금융공사 등), 증권·보험 (all confirmed in scope by the
+     user 2026-10-15). Exclude non-financial issuers
      (공기업·공공기관 such as 한국전력, 일반 대기업, 자동차 제조사, 정부): not in the KP block, KP highlights, KP table
      or takeaway. A non-financial deal may appear elsewhere only on its own merit (e.g. a Hyundai affiliate in 02).
      Log excluded non-financial KP deals in the deal list as "범위 외 (비금융)".
