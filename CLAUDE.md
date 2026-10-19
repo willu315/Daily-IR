@@ -188,6 +188,10 @@ Run order: rule 1 (holiday) → 8 (collector) → research incl. 13 (funding) �
    In the section, keep only its title line with the existing badge class:
    `<div class="item"><h3>Company | headline<span class="badge">HIGHLIGHT 참조</span></h3></div>`
    (no facts / IR message / implications / source there; they live in the highlight block).
+   Highlight order (user decision 2026-10-20, always): put first the highlights most directly tied to Hyundai Capital
+   and the capital (캐피탈·여전채 조달) sector — HCS-specific events, capital-company/여전채 funding, spreads and ratings.
+   Card-company (카드업권) stories and other peer/affiliate stories come after them (e.g. a card leverage story goes 2nd,
+   below a 여전채 spread story). `archive.html` shows the first highlight, so it follows the same order.
 11. Writing conventions (as in the existing issues):
    - Korean body text; English labels and section names exactly as in the template.
    - Headline: "Company | key fact, with the number" (e.g. "Ford Credit | $1.579bn Auto ABS 2026-C 종결").
