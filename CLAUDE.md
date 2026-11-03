@@ -153,8 +153,8 @@ Run order: rule 1 (holiday) → 8 (collector) → research incl. 13 (funding) �
    give the share link in this exact form, ready to paste into the messenger:
    `[Daily IR Intelligence] MM/DD 호 발행 — https://willu315.github.io/Daily-IR/todaysnews.html`
    Send the share link only after the live check passes, never before.
-   User request 2026-11-04: on every publish, the very first thing in the final report is that share line alone in a
-   fenced code block (```), so it can be copied in one tap. Do not wrap it in other text.
+   User request 2026-11-04 (revised): on every publish, the very first line of the final report is the bare URL
+   https://willu315.github.io/Daily-IR/todaysnews.html alone, with no label or other text, so it can be opened directly.
 7. Repository layout (replaces "Live file: index.html" above):
    - `todaysnews.html` = latest issue. `index.html` only forwards to it (do not put content there).
    - `archive/YYYY-MM-DD.html` = every issue, including today's. Never overwrite another date's file.
